@@ -17,8 +17,10 @@ console.log(fruta1, fruta2);
 let [frutaA, , , frutaB] = frutas;
 console.log(frutaA, frutaB);
 class Persona {
-    constructor(nombre, edad) {
+    constructor(nombre, apellidoP, apellidoM, edad) {
         this.nombre = nombre;
+        this.apellidoP = apellidoP;
+        this.apellidoM = apellidoM;
         this.edad = edad;
     }
     getEdad() {
@@ -30,16 +32,50 @@ class Persona {
     getNombre() {
         return this.nombre;
     }
-    setNombre(edad) {
+    setNombre(nombre) {
         this.nombre = nombre;
     }
+    getApellidoPaterno() {
+        return this.apellidoP;
+    }
+    setApellidoPaterno(apellidoP) {
+        this.apellidoP = apellidoP;
+    }
+    getApellidoMaterno() {
+        return this.apellidoM;
+    }
+    setApellidoMaterno(apellidoM) {
+        this.apellidoP = apellidoM;
+    }
 }
-const alberto = new Persona('Alberto', 19);
+const alberto = new Persona('Alberto', 'Velasco', 'Gutierrez', 19);
 console.log('Nombre:', alberto.nombre);
 console.log('Edad:', alberto.edad);
 alberto.nombre = 'Hola';
 alberto.edad = 25;
-let carlos = new Persona('Carlos', 19);
+let carlos = new Persona('Carlos', 'Serrano', 'Aguilar', 19);
 carlos.setEdad(20);
 console.log('Nombre:', carlos.getNombre());
+console.log('Apellido Paterno:', carlos.getApellidoPaterno());
+console.log('Apellido Materno:', carlos.getApellidoMaterno());
 console.log('Edad:', carlos.getEdad());
+class UserAccount {
+    constructor(name, id) {
+        this.name = name;
+        this.id = id;
+    }
+    getName() {
+        return this.name;
+    }
+    setName(name) {
+        this.name = name;
+    }
+    getId() {
+        return this.id;
+    }
+    setId(id) {
+        this.id = id;
+    }
+}
+const usuario = new UserAccount('Imagine Dragons', 1);
+console.log(usuario.name, usuario.id);
